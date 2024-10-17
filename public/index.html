@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast La Vingtaine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Wouy Yay, La vingtaine</h1>
+        <p>L'espace des jeunes.</p>
+    </header>
+
+    <main class="container">
+        <section class="episode">
+            <h2>Dernier épisode : Comment gérer le stress</h2>
+            <audio controls>
+                <source src="episode1.mp3" type="audio/mpeg">
+                Votre navigateur ne supporte pas l'élément audio.
+            </audio>
+            <p>Dans cet épisode, nous discutons des moyens pratiques de gérer le stress dans la vingtaine...</p>
+        </section>
+
+        <section class="comments">
+            <h3>Exprimez-vous !</h3>
+            <div id="comments-list" class="comments-list"></div>
+            <form id="comment-form" class="add-comment">
+                <textarea id="comment-input" placeholder="Dites ce que vous pensez. Personne ne vous jugera." required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 WOUYAY, LA VINGTAINE</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

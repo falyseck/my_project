@@ -1,0 +1,185 @@
+/* General Styles */
+body {
+    background-color: #001F3F; /* Dark Blue */
+    color: #EAD8B1; /* Light Beige */
+    font-family: 'Roboto', sans-serif; /* Changed to a more readable font */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Header Styles */
+header {
+    background-color: #3A6D8C; /* Medium Blue */
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #EAD8B1;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #EAD8B1;
+    font-style: italic;
+}
+
+/* Episode Section */
+.episode {
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+    padding: 20px;
+    background-image: url('public/IMG_2327.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #EAD8B1;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+/* Add this new rule to create an overlay */
+.episode::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 31, 63, 0.7); /* Dark blue with 70% opacity */
+    border-radius: 8px;
+}
+
+/* Ensure content is above the overlay */
+.episode > * {
+    position: relative;
+    z-index: 1;
+}
+
+audio {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Comments Section */
+.comments {
+    flex: 1;
+    min-width: 300px; /* Ensure minimum width on smaller screens */
+    margin: 10px;
+    padding: 20px;
+    background-color: #3A6D8C;
+    color: #EAD8B1;
+    height: 500px;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.comments h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.comments-list {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 10px; /* Space for scrollbar */
+}
+
+.comment {
+    background-color: rgba(234, 216, 177, 0.1); /* Light beige with opacity */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.add-comment {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    height: 80px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: rgba(234, 216, 177, 0.2);
+    color: #EAD8B1;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #EAD8B1;
+    color: #001F3F;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #D4C399;
+}
+
+.delete-comment {
+    background-color: #FF4C4C;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.8em;
+}
+
+.delete-comment:hover {
+    background-color: #FF0000;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .episode, .comments {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .comments {
+        height: auto;
+        max-height: 500px;
+    }
+
+    textarea {
+        height: 60px;
+    }
+}
